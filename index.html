@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">/*设置手机页面时一定要设置视图，否则不能按手机页面大小自动调整页面大小展示*/
+    <title>移动端八卦图demo</title>
+    <style>
+        body {
+            background: rgb(226, 221, 221);
+        }
+
+        * {
+            box-sizing: border-box;
+            /*设置并列的两个模块不重合*/
+        }
+
+        @keyframes x {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+            /*引用一个关键帧函数X*/
+
+        }
+
+        #八卦图-wrapper {
+            fuckborder: 1px solid red;
+            height: 100vh;
+            /*vh=viewpoint视图看见的全部页面d的高度*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*这三行设置内容居中，flex默认里面的内容一字排开*/
+            flex-direction: column;
+            /*将图与字上下显示*/
+        }
+
+        #八卦-miaoshu {
+            margin-top: 1em;
+            /*em表示一个字的高度*/
+        }
+
+        #八卦图 {
+            fuckborder: 1px solid red;
+            height: 400px;
+            width: 400px;
+            border-radius: 200px;
+            position: relative;
+            /*设置并列的两个模块浮起来*/
+            overflow: hidden;
+            /*将超出圆圈的部分隐藏*/
+            animation: x 10s linear infinite;
+            /*插入一个动画线性10秒一次转动，无穷转动*/
+            box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 75);
+            /*设置其他样式，阴影等*/
+        }
+
+        meidia(max-width:500px) {
+            #八卦图 {
+                height: 200px;
+                width: 200px;
+            }
+        }
+
+        #八卦图>div:first-child {
+            fuckborder: 3px solid blueviolet;
+            height: 100%;
+            width: 50%;
+
+            /*半径*/
+            left: 0;
+            position: absolute;
+            /*设置并列的两个模块浮起来*/
+            background: black;
+        }
+
+        #八卦图>div:nth-child(2) {
+            fuckborder: 3px solid greenyellow;
+            height: 100%;
+            width: 50%;
+            right: 0;
+            position: absolute;
+            background: white;
+        }
+
+        #八卦图>div:nth-child(3) {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background: black;
+            left: 25%;
+            position: absolute;
+        }
+
+        @media(max-widtn:500px) {
+            #八卦图>div:nth-child(3) {
+                height: 100px;
+                width: 100px;
+            }
+        }
+
+        #八卦图>div:nth-child(4) {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background: white;
+            margin-left: 25%;
+            position: absolute;
+            bottom: 0;
+            /*设置距离底部距离为0*/
+        }
+
+        @media(max-widtn:500px) {
+            #八卦图>div:nth-child(4) {
+                height: 100px;
+                width: 100px;
+            }
+        }
+
+        #八卦图>div:nth-child(5) {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            left: 50%;
+            margin-left: -25px;
+            position: absolute;
+            top: 75px;
+            background: white;
+
+        }
+
+        @media(max-widtn:500px) {
+            #八卦图>div:nth-child(5) {
+                height: 25px;
+                width: 25px;
+                bottom: 37.5px;
+                margin-left: -12.5px;
+            }
+        }
+
+        #八卦图>div:nth-child(6) {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            left: 50%;
+            margin-left: -25px;
+            position: absolute;
+            bottom: 75px;
+            background: black;
+
+        }
+
+        @media(max-widtn:500px) {
+            #八卦图>div:nth-child(6) {
+                height: 25px;
+                width: 25px;
+                bottom: 37.5px;
+                margin-left: -12.5px;
+            }
+        }
+
+        /*媒介查询*/
+    </style>
+</head>
+
+<body>
+    <div id="八卦图-wrapper">
+        <div id="八卦图">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="八卦-miaoshu">这是一个八卦图</div>
+    </div>
+</body>
+
+</html>
